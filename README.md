@@ -8,6 +8,10 @@ Install Yarn package manager https://classic.yarnpkg.com/en/docs/getting-started
 
 In the project directory, you can run:
 
+### `yarn install`
+
+Install all node modules.
+
 ### `yarn start`
 
 Runs the app in the development mode.\
