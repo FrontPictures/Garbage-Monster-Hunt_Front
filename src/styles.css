@@ -1,0 +1,62 @@
+:root {
+  --bg-black: #0A0603;
+  --text-yellow:#EBB613;
+}
+@font-face {
+  font-family: CCSignLanguage; /* Гарнитура шрифта */
+  src: url(assets/fonts/font.otf);
+}
+body{
+  font-family: CCSignLanguage;
+  font-style: normal;
+  font-weight: 400;
+}
+.bg{
+  background: var(--bg-black);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.loading-image{
+  width: 430px;
+  height: 446px;
+}
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.error{
+  color: #c61616;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.input{
+  font-family: CCSignLanguage;
+  outline:none;
+  font-size: 56px;
+  line-height: 62px;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid #A8A8A8;
+  background:var(--bg-black);
+  margin-bottom: 30px;
+  padding: 15px 129px 29px;
+  color:var(--text-yellow);
+}
+.input:focus{
+  border-color: #fff;
+}
+.thumb {
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: visibility 0ms ease 400ms;
+}
+.full {
+  transition: opacity 400ms ease 0ms;
+}
