@@ -30,7 +30,7 @@ const ContactForm = () => {
               <div>
                 <div className="input-container">
                   <label htmlFor="name">
-                    <p className="input-lable">Name</p>
+                    <p className="input-label">Name</p>
                     <input id="name" autoFocus className="input" autoComplete="off" type="text" name="name" ref={register({ required: true, minLength: 2 })} />
                   </label>
                   {errors.name?.type === 'required' && <p className="error">This field is required</p>}
@@ -38,7 +38,7 @@ const ContactForm = () => {
                 </div>
                 <div className="input-container">
                   <label htmlFor="phone">
-                    <p className="input-lable">Phone</p>
+                    <p className="input-label">Phone</p>
                     <input id="phone" className="input" autoComplete="off" type="text" name="phone" ref={register({ required: true, minLength: 2 })} />
                   </label>
                   {errors.phone?.type === 'required' && <p className="error">This field is required</p>}

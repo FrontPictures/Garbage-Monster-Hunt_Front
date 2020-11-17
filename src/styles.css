@@ -43,7 +43,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.input-lable{
+.input-label{
   text-transform:uppercase;
   color: var(--gray);
   display:block;
