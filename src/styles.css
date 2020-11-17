@@ -87,6 +87,7 @@ body {
   font-style:italic;
   color:var(--white);
   letter-spacing: 3px;
+  cursor: pointer;
 }
 .btn-start:hover{
   color:var(--yellow);
@@ -98,6 +99,7 @@ body {
   flex-direction: column;
 }
 .menu-item{
+  cursor: pointer;
   outline:none;
   width:414px;
   height:102px;
