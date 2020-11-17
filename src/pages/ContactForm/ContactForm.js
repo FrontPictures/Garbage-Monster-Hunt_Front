@@ -37,7 +37,7 @@ const ContactForm = () => {
                   {errors.name?.type === 'minLength' && <p className="error">This field is less 2 symbols</p>}
                 </div>
                 <div className="input-container">
-                  <label htmlFor="phone" className="input-lable">
+                  <label htmlFor="phone">
                     <p className="input-lable">Phone</p>
                     <input id="phone" className="input" autoComplete="off" type="text" name="phone" ref={register({ required: true, minLength: 2 })} />
                   </label>
