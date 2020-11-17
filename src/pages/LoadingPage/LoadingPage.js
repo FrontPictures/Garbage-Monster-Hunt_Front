@@ -11,9 +11,11 @@ const LoadingPage = ({ history }) => {
   }, []);
 
     return (
-      <Flip left>
-        <img className="loading-image" src={LoadingImage} alt="Welcome, user!" />
-      </Flip>
+      <div className="center">
+        <Flip left>
+          <img className="loading-image" src={LoadingImage} alt="Welcome, user!" />
+        </Flip>
+      </div>
     );
 };
 export default LoadingPage;

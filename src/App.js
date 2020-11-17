@@ -15,16 +15,14 @@ import {
 function App() {
   return (
     <div className="bg">
-      <div className="center">
-        <Router>
-          <Switch>
-            <Route exact path="/" component={LoadingPage} />
-            <Route exact path="/menu" component={Menu} />
-            <Route exact path="/contact-form" component={ContactForm} />
-            <Redirect to="/" />
-          </Switch>
-        </Router>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LoadingPage} />
+          <Route exact path="/menu" component={Menu} />
+          <Route exact path="/contact-form" component={ContactForm} />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
     </div>
   );
 }
