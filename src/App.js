@@ -22,7 +22,7 @@ const App = () => {
      checkStatus();
     }, 1000);
     return () => clearInterval(interval);
-  });
+  }, []);
 
   return (
     <div className="bg">
