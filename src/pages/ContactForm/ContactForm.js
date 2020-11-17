@@ -19,7 +19,6 @@ const ContactForm = () => {
             console.log('error: ', error);
         });
     };
-    console.log(errors);
     return (
       <>
         <Zoom right>

@@ -12,7 +12,18 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-function App() {
+const App = () => {
+  const checkStatus = () => {
+
+  };
+
+  useEffect(() => {
+   const interval = setInterval(() => {
+     checkStatus();
+    }, 1000);
+    return () => clearInterval(interval);
+  });
+
   return (
     <div className="bg">
       <Router>
@@ -25,6 +36,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;
