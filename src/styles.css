@@ -38,6 +38,7 @@ body {
 .error {
   color: #c61616;
   letter-spacing:2px;
+  margin-top: 10px;
 }
 .form{
   display: flex;
