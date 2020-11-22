@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const ContactForm = ({ history }) => {
     const { register, handleSubmit, errors } = useForm();
-    const [userActive, setUserActive] = useState(false);
     let timer;
 
     const onSubmit = (data) => {
@@ -19,20 +18,20 @@ const ContactForm = ({ history }) => {
     };
     useEffect(() => {
         timer = setTimeout(() => {
-            if (!userActive) history.push('/');
+           history.push('/');
         }, 30000);
         return () => clearTimeout(timer);
-    }, [userActive]);
+    }, []);
 
     const handleChange = (e) => {
        if (e.target.value) {
-           setUserActive(true);
            clearTimeout(timer);
            timer = setTimeout(() => {
                history.push('/');
            }, 30000);
        } else {
-            timer = setTimeout(() => {
+           clearTimeout(timer);
+           timer = setTimeout(() => {
                 history.push('/');
             }, 30000);
        }
