@@ -4,35 +4,25 @@ import './styles.css';
 import LoadingPage from 'pages/LoadingPage';
 import Menu from 'pages/Menu';
 import ContactForm from 'pages/ContactForm';
+import { Route } from 'react-router-dom';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
-
-const App = () => {
+const App = ({ history }) => {
   const checkStatus = () => {
 
   };
 
   useEffect(() => {
    const interval = setInterval(() => {
-     checkStatus();
+       checkStatus();
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="bg">
-      <Router>
-        <Switch>
-          <Route exact path="/" component={LoadingPage} />
-          <Route exact path="/menu" component={Menu} />
-          <Route exact path="/contact-form" component={ContactForm} />
-        </Switch>
-      </Router>
+      <Route exact path="/" component={LoadingPage} />
+      <Route exact path="/menu" component={Menu} />
+      <Route exact path="/contact-form" component={ContactForm} />
     </div>
   );
 };

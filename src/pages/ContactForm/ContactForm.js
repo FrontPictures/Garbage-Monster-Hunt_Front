@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Zoom from 'react-reveal/Zoom';
 import axios from 'axios';
 
-const ContactForm = () => {
+const ContactForm = ({ history }) => {
     const { register, handleSubmit, errors } = useForm();
-
-    const handleOnStart = () => {
-
-    };
+    const [userActive, setUserActive] = useState(false);
+    let timer;
 
     const onSubmit = (data) => {
         // POST http request
@@ -19,10 +17,26 @@ const ContactForm = () => {
             console.log('error: ', error);
         });
     };
+    useEffect(() => {
+        timer = setTimeout(() => {
+            if (!userActive) history.push('/');
+        }, 30000);
+        return () => clearTimeout(timer);
+    }, [userActive]);
+
+    const handleChange = (e) => {
+       if (e.target.value) setUserActive(true);
+       else {
+            timer = setTimeout(() => {
+                history.push('/');
+            }, 30000);
+       }
+    };
+
     return (
       <>
         <Zoom right>
-          <span className="btn-start" onClick={handleOnStart}>START GAME</span>
+          <span onClick={handleSubmit(onSubmit)} className="btn-start">START GAME</span>
         </Zoom>
         <div className="center">
           <form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -31,7 +45,16 @@ const ContactForm = () => {
                 <div className="input-container">
                   <label htmlFor="name">
                     <p className="input-label">Name</p>
-                    <input id="name" autoFocus className="input" autoComplete="off" type="text" name="name" ref={register({ required: true, minLength: 2 })} />
+                    <input
+                      id="name"
+                      onChange={handleChange}
+                      autoFocus
+                      className="input"
+                      autoComplete="off"
+                      type="text"
+                      name="name"
+                      ref={register({ required: true, minLength: 2 })}
+                    />
                   </label>
                   {errors.name?.type === 'required' && <p className="error">This field is required</p>}
                   {errors.name?.type === 'minLength' && <p className="error">This field is less 2 symbols</p>}
