@@ -25,8 +25,13 @@ const ContactForm = ({ history }) => {
     }, [userActive]);
 
     const handleChange = (e) => {
-       if (e.target.value) setUserActive(true);
-       else {
+       if (e.target.value) {
+           setUserActive(true);
+           clearTimeout(timer);
+           timer = setTimeout(() => {
+               history.push('/');
+           }, 30000);
+       } else {
             timer = setTimeout(() => {
                 history.push('/');
             }, 30000);
