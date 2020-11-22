@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Zoom from 'react-reveal/Zoom';
 import axios from 'axios';
@@ -23,18 +23,11 @@ const ContactForm = ({ history }) => {
         return () => clearTimeout(timer);
     }, []);
 
-    const handleChange = (e) => {
-       if (e.target.value) {
-           clearTimeout(timer);
-           timer = setTimeout(() => {
-               history.push('/');
-           }, 30000);
-       } else {
-           clearTimeout(timer);
-           timer = setTimeout(() => {
-                history.push('/');
-            }, 30000);
-       }
+    const handleChange = () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+             history.push('/');
+        }, 30000);
     };
 
     return (
